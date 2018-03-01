@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,10 +52,115 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationUsers.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Errors.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Footers.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityRoles.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityUserClaims.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityUserLogins.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityUserRoles.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuGroups.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menus.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetails.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostCategories.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Posts.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategories.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slides.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupportOnlines.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigs.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VisitorStatistics.cs">
+      <DependentUpon>KShopModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="KShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KShopModel.edmx.diagram">
+      <DependentUpon>KShopModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>KShopModel.Context.cs</LastGenOutput>
+      <DependentUpon>KShopModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="KShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KShopModel.edmx</DependentUpon>
+      <LastGenOutput>KShopModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
