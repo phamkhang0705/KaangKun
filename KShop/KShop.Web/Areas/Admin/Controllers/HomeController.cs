@@ -1,7 +1,6 @@
 ﻿using KShop.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace KShop.Web.Areas.Admin.Controllers
@@ -10,18 +9,29 @@ namespace KShop.Web.Areas.Admin.Controllers
     {
         public ActionResult Products()
         {
-            KaangKunShopEntities _dbEntities = new KaangKunShopEntities();
-            List<Products> lists = _dbEntities.Products.ToList();
-            lists.Add(new Products()
+            return View();
+        }
+
+        public ActionResult GetProducts()
+        {
+            List<Products> list = new List<Products>()
             {
-                Alias = "1",
-                CategoryID = 1,
-                Content = "1",
-                CreatedBy = "Admin",
-                CreatedDate = DateTime.Now,
-                Description = "1"
-            });
-            return View(lists);
+                new Products()
+                {
+                    Alias = "1",
+                    CategoryID = 1,
+                    Content = "1",
+                    CreatedBy = "a",
+                    CreatedDate = DateTime.Now,
+                    Description = "12321",
+                    HomeFlag =true,
+                    HotFlag = true,
+                    ID = 1,
+                    Image = "",
+                    MetaDescription = ""
+                }
+            };
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Index()
